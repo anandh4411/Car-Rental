@@ -1,3 +1,7 @@
 .foot-i {
   color: #fab700 !important;
 }
+html,
+body {
+  scroll-behavior: smooth !important;
+}

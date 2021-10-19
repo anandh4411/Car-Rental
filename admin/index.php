@@ -494,41 +494,56 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-lg-4 col-md-6">
-            <div class="single-feature">
-              <h4>
-                <i class="fas fa-car-side" style="margin-right: 10px"></i>Audi
-              </h4>
-              <div class="row">
-                <div class="col">
-                  <small>number:</small>
-                  <h6>asf</h6>
-                </div>
-                <div class="col">
-                  <small>location:</small>
-                  <h6>asf</h6>
-                </div>
-                <div class="col">
-                  <small>name:</small>
-                  <h6>asf</h6>
-                </div>
-                <div class="col">
-                  <small>number:</small>
-                  <h6>asf</h6>
-                </div>
-                <div class="col">
-                  <small>availability:</small>
-                  <h6>asf</h6>
-                </div>
-                <div style="margin-top: 20px" class="col">
-                  <a href="" class="btn btn-primary">Update</a>
-                </div>
-                <div style="margin-top: 20px" class="col">
-                  <a href="" class="btn btn-danger">Delete</a>
-                </div>
-              </div>
-            </div>
-          </div>
+          <?php
+            include 'php/db.php';
+            $query = "SELECT * FROM car";
+            $result = mysqli_query($connect, $query);
+            while($row = mysqli_fetch_array($result)){
+              echo '<div class="col-lg-4 col-md-6">
+                      <div class="single-feature">
+                        <h4>
+                          <i class="fas fa-car-side" style="margin-right: 10px"></i>'.$row["car_name"].'
+                        </h4>
+                        <div class="row">
+                          <div class="col">
+                            <small>number:</small>
+                            <h6>'.$row["car_number"].'</h6>
+                          </div>
+                          <div class="col">
+                            <small>location:</small>
+                            <h6>'.$row["location"].'</h6>
+                          </div>
+                          <div class="col">
+                            <small>name:</small>
+                            <h6>'.$row["owner_name"].'</h6>
+                          </div>
+                          <div class="col">
+                            <small>phone:</small>
+                            <h6>'.$row["owner_phone"].'</h6>
+                          </div>
+                          <div class="col">
+                            <small>availability:</small>
+                            <h6>'.$row["availability"].'</h6>
+                          </div>
+                          <div style="margin-left: 0px" class="row">
+                            <div style="margin-top: 20px" class="col">
+                              <form action="pages/update-car.php" method="post">
+                                <input name="id" hidden value="'.$row["id"].'" type="text" />
+                                <input value="Update" type="submit" class="btn btn-primary">
+                              </form>
+                            </div>
+                            <div style="margin-top: 20px" class="col">
+                              <form action="php/car/delete-car.php" method="post">
+                                <input name="id" hidden value="'.$row["id"].'" type="text" />
+                                <input value="Delete" type="submit" class="btn btn-danger">
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>';
+            }
+          ?>
         </div>
       </div>
     </section>
@@ -549,44 +564,55 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-lg-4 col-md-6">
-            <div class="single-feature">
-              <h4>
-                <i style="margin-right: 8px" class="fas fa-user-plus"></i>Anandh
-              </h4>
-              <div class="row">
-                <div class="col">
-                  <small
-                    ><i class="fas fa-car-side" style="margin-right: 8px"></i
-                    >car:</small
-                  >
-                  <h6>asf</h6>
-                </div>
-                <div class="col">
-                  <small>location:</small>
-                  <h6>asf</h6>
-                </div>
-                <div class="col">
-                  <small>name:</small>
-                  <h6>asf</h6>
-                </div>
-                <div class="col">
-                  <small>number:</small>
-                  <h6>asf</h6>
-                </div>
-                <div class="col">
-                  <small>availability:</small>
-                  <h6>asf</h6>
-                </div>
-                <div style="margin-top: 20px" class="col">
-                  <a href="" class="btn btn-primary">Update</a>
-                </div>
-                <div style="margin-top: 20px" class="col">
-                  <a href="" class="btn btn-danger">Delete</a>
-                </div>
-              </div>
-            </div>
-          </div>
+          <?php
+            include 'php/db.php';
+            $query = "SELECT * FROM booking";
+            $result = mysqli_query($connect, $query);
+            while($row = mysqli_fetch_array($result)){
+              echo '<div class="col-lg-4 col-md-6">
+                      <div class="single-feature">
+                        <h4>
+                          <i style="margin-right: 8px" class="fas fa-user-plus"></i>'.$row["name"].'
+                        </h4>
+                        <div class="row">
+                          <div class="col">
+                            <small
+                              ><i class="fas fa-car-side" style="margin-right: 8px"></i
+                              >car:</small
+                            >
+                            <h6>'.$row["car"].'</h6>
+                          </div>
+                          <div class="col">
+                            <small>pickup:</small>
+                            <h6>'.$row["pickup"].'</h6>
+                          </div>
+                          <div class="col">
+                            <small>dropoff:</small>
+                            <h6>'.$row["dropoff"].'</h6>
+                          </div>
+                          <div class="col">
+                            <small>phone:</small>
+                            <h6>'.$row["phone"].'</h6>
+                          </div>
+                          <div class="row">
+                            <div style="margin-top: 20px" class="col">
+                              <form action="php/car/delete-car.php" method="post">
+                                <input name="id" hidden value="'.$row["id"].'" type="text" />
+                                <input value="Update" type="submit" class="btn btn-primary">
+                              </form>
+                            </div>
+                            <div style="margin-top: 20px" class="col">
+                              <form action="php/booking/delete-booking.php" method="post">
+                                <input name="id" hidden value="'.$row["id"].'" type="text" />
+                                <input value="Delete" type="submit" class="btn btn-danger">
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>';
+            }
+          ?>
         </div>
       </div>
     </section>

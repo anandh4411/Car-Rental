@@ -351,16 +351,21 @@
           </div>
           <div class="col-lg-5 col-md-6 header-right">
             <h4 class="text-white pb-30">Book Your Car Today!</h4>
-            <form class="form" role="form" autocomplete="off">
+            <form action="php/add-booking.php" method="post" class="form" role="form">
               <div class="form-group">
                 <div class="default-select" id="default-select">
-                  <select>
+                  <select name="car">
                     <option value="" disabled selected hidden>
                       Select Your Car
                     </option>
-                    <option value=" 1">BMW</option>
-                    <option value="1">Farrari</option>
-                    <option value="1">Toyota</option>
+                    <?php
+                      include 'php/db.php';
+                      $query = "SELECT * FROM car";
+                      $result = mysqli_query($connect, $query);
+                      while($row = mysqli_fetch_array($result)){
+                        echo '<option>'.$row["car_name"].'</option>';
+                      }
+                    ?>
                   </select>
                 </div>
               </div>
@@ -375,6 +380,7 @@
                 <div class="col-md-6 wrap-right">
                   <div class="input-group dates-wrap">
                     <input
+                      name="pickup"
                       id="datepicker"
                       class="dates form-control"
                       id="exampleAmount"
@@ -402,6 +408,7 @@
                 <div class="col-md-6 wrap-right">
                   <div class="input-group dates-wrap">
                     <input
+                      name="dropoff"
                       id="datepicker2"
                       class="dates form-control"
                       id="exampleAmount"
@@ -439,7 +446,7 @@
               <div class="form-group row">
                 <div class="col-md-12">
                   <button
-                    type="reset"
+                    type="submit"
                     class="
                       btn btn-default btn-lg btn-block
                       text-center text-uppercase
@@ -569,40 +576,37 @@
             </p>
           </div>
         </div>
+
         <div class="row">
-          <div class="col-lg-4 col-md-6">
-            <div class="single-feature">
-              <h4>
-                <i class="fas fa-car-side" style="margin-right: 10px"></i>Audi
-              </h4>
-              <div class="row">
-                <div class="col">
-                  <small>number:</small>
-                  <h6>asf</h6>
-                </div>
-                <div class="col">
-                  <small>location:</small>
-                  <h6>asf</h6>
-                </div>
-                <div class="col">
-                  <small>name:</small>
-                  <h6>asf</h6>
-                </div>
-                <div class="col">
-                  <small>number:</small>
-                  <h6>asf</h6>
-                </div>
-                <div class="col">
-                  <small>availability:</small>
-                  <h6>asf</h6>
-                </div>
-                <div style="margin-top: 20px" class="col">
-                  <a href="" class="btn primary-btn">Book Now</a>
-                </div>
-              </div>
-            </div>
-          </div>
+          <?php
+            include 'php/db.php';
+            $query = "SELECT * FROM car";
+            $result = mysqli_query($connect, $query);
+            while($row = mysqli_fetch_array($result)){
+              echo '<div class="col-lg-4 col-md-6">
+                      <div class="single-feature">
+                        <h4>
+                          <i class="fas fa-car-side" style="margin-right: 10px"></i>'.$row["car_name"].'
+                        </h4>
+                        <div class="row">
+                          <div class="col">
+                            <small>location:</small>
+                            <h6>'.$row["location"].'</h6>
+                          </div>
+                          <div class="col">
+                            <small>availability:</small>
+                            <h6>'.$row["availability"].'</h6>
+                          </div>
+                          <div style="margin-top: 20px" class="col">
+                            <a href="#home" class="btn primary-btn">Book Now</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>';
+            }
+          ?>
         </div>
+
       </div>
     </section>
 
