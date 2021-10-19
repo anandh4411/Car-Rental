@@ -33,6 +33,7 @@
       rel="stylesheet"
       href="../css/A.owl.carousel.css+main.css,Mcc.-z3jUV0v7B.css.pagespeed.cf.AXcunijNo-.css"
     />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
     <link rel="stylesheet" href="../css/style.css" />
   </head>
 
@@ -43,7 +44,8 @@
           <!-- Logo Code -->
           <div id="logo">
             <div class="row">
-              <a href="index.html">
+              <h3 style="color: white; margin-right: 10px">ADMIN</h3>
+              <a style="margin-top: 18px" href="index.html">
                 <script data-pagespeed-no-defer>
                   (function () {
                     for (
@@ -312,7 +314,6 @@
                   onload="pagespeed.CriticalImages.checkImageForCriticality(this);"
                 />
               </a>
-              <h3 style="color: white; margin-left: 10px">ADMIN</h3>
             </div>
           </div>
           <!-- Logo Code End -->
@@ -343,51 +344,57 @@
           "
         >
           <div
-            style="margin-right: 10px"
+            style="margin-top: 20px"
             class="banner-content col-lg-5 col-md-5 header-right"
           >
-            <h4 class="text-white pb-30">Add a new Car for Rent</h4>
-            <form class="form" role="form" autocomplete="off">
+            <h4 class="text-white text-center pb-30">Add a new Car for Rent</h4>
+            <form
+              action="php/car/add-rent-car.php"
+              method="post"
+              class="form"
+              role="form"
+              autocomplete="off"
+            >
               <div class="from-group">
                 <input
                   class="form-control txt-field"
                   type="text"
-                  name="name"
+                  name="car_name"
                   placeholder="Car Name"
                 />
                 <input
                   class="form-control txt-field"
-                  type="email"
-                  name="email"
+                  type="text"
+                  name="car_number"
                   placeholder="Car Number"
                 />
                 <input
                   class="form-control txt-field"
-                  type="tel"
-                  name="phone"
+                  type="text"
+                  name="location"
                   placeholder="Location"
                 />
                 <input
                   class="form-control txt-field"
                   type="text"
-                  name="name"
+                  name="owner_name"
                   placeholder="Owner Name"
                 />
                 <input
                   class="form-control txt-field"
-                  type="text"
-                  name="name"
+                  type="tel"
+                  name="owner_phone"
                   placeholder="Owner Phone Number"
                 />
               </div>
               <div class="form-group">
                 <div class="default-select" id="default-select">
-                  <select>
+                  <select name="availability">
                     <option value="" disabled selected hidden>
                       Available or Not
                     </option>
-                    <option value=" 1">Available</option>
-                    <option value="1">Not Available</option>
+                    <option>Available</option>
+                    <option>Not Available</option>
                   </select>
                 </div>
               </div>
@@ -406,38 +413,43 @@
               </div>
             </form>
           </div>
-          <div class="col-lg-5 col-md-6 header-right">
-            <h4 class="text-white pb-30">Add a new Car for Sale</h4>
-            <form class="form" role="form" autocomplete="off">
+          <!-- <div class="col-lg-5 col-md-6 header-right">
+            <h4 class="text-white text-center pb-30">Add a new Car for Sale</h4>
+            <form
+              action="php/car/add-sell-car.php"
+              method="post"
+              class="form"
+              role="form"
+            >
               <div class="from-group">
                 <input
                   class="form-control txt-field"
                   type="text"
-                  name="name"
+                  name="car_name"
                   placeholder="Car Name"
                 />
                 <input
                   class="form-control txt-field"
-                  type="email"
-                  name="email"
+                  type="text"
+                  name="car_number"
                   placeholder="Car Number"
                 />
                 <input
                   class="form-control txt-field"
-                  type="tel"
-                  name="phone"
+                  type="text"
+                  name="location"
                   placeholder="Location"
                 />
                 <input
                   class="form-control txt-field"
                   type="text"
-                  name="name"
+                  name="owner_name"
                   placeholder="Owner Name"
                 />
                 <input
                   class="form-control txt-field"
-                  type="text"
-                  name="name"
+                  type="tel"
+                  name="owner_phone"
                   placeholder="Owner Phone Number"
                 />
               </div>
@@ -447,8 +459,8 @@
                     <option value="" disabled selected hidden>
                       Sold or Not
                     </option>
-                    <option value=" 1">Available</option>
-                    <option value="1">Sold</option>
+                    <option value="available">Available</option>
+                    <option value="sold">Sold</option>
                   </select>
                 </div>
               </div>
@@ -466,7 +478,7 @@
                 </div>
               </div>
             </form>
-          </div>
+          </div> -->
         </div>
       </div>
     </section>
@@ -484,56 +496,37 @@
         <div class="row">
           <div class="col-lg-4 col-md-6">
             <div class="single-feature">
-              <h4><span class="lnr lnr-user"></span>Expert Technicians</h4>
-              <p>
-                Usage of the Internet is becoming more common due to rapid
-                advancement of technology and power.
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="single-feature">
-              <h4><span class="lnr lnr-license"></span>Professional Service</h4>
-              <p>
-                Usage of the Internet is becoming more common due to rapid
-                advancement of technology and power.
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="single-feature">
-              <h4><span class="lnr lnr-phone"></span>Great Support</h4>
-              <p>
-                Usage of the Internet is becoming more common due to rapid
-                advancement of technology and power.
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="single-feature">
-              <h4><span class="lnr lnr-rocket"></span>Technical Skills</h4>
-              <p>
-                Usage of the Internet is becoming more common due to rapid
-                advancement of technology and power.
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="single-feature">
-              <h4><span class="lnr lnr-diamond"></span>Highly Recomended</h4>
-              <p>
-                Usage of the Internet is becoming more common due to rapid
-                advancement of technology and power.
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="single-feature">
-              <h4><span class="lnr lnr-bubble"></span>Positive Reviews</h4>
-              <p>
-                Usage of the Internet is becoming more common due to rapid
-                advancement of technology and power.
-              </p>
+              <h4>
+                <i class="fas fa-car-side" style="margin-right: 10px"></i>Audi
+              </h4>
+              <div class="row">
+                <div class="col">
+                  <small>number:</small>
+                  <h6>asf</h6>
+                </div>
+                <div class="col">
+                  <small>location:</small>
+                  <h6>asf</h6>
+                </div>
+                <div class="col">
+                  <small>name:</small>
+                  <h6>asf</h6>
+                </div>
+                <div class="col">
+                  <small>number:</small>
+                  <h6>asf</h6>
+                </div>
+                <div class="col">
+                  <small>availability:</small>
+                  <h6>asf</h6>
+                </div>
+                <div style="margin-top: 20px" class="col">
+                  <a href="" class="btn btn-primary">Update</a>
+                </div>
+                <div style="margin-top: 20px" class="col">
+                  <a href="" class="btn btn-danger">Delete</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -546,63 +539,52 @@
       <div class="container">
         <div class="row d-flex justify-content-center">
           <div class="col-md-8 pb-40 header-text">
-            <h1>All the new Bookings</h1>
+            <h1>
+              All the new Bookings<i
+                style="margin-left: 15px"
+                class="fas fa-calendar-plus"
+              ></i>
+            </h1>
             <p>Manage all the pending bookings made.</p>
           </div>
         </div>
         <div class="row">
           <div class="col-lg-4 col-md-6">
             <div class="single-feature">
-              <h4><span class="lnr lnr-user"></span>Expert Technicians</h4>
-              <p>
-                Usage of the Internet is becoming more common due to rapid
-                advancement of technology and power.
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="single-feature">
-              <h4><span class="lnr lnr-license"></span>Professional Service</h4>
-              <p>
-                Usage of the Internet is becoming more common due to rapid
-                advancement of technology and power.
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="single-feature">
-              <h4><span class="lnr lnr-phone"></span>Great Support</h4>
-              <p>
-                Usage of the Internet is becoming more common due to rapid
-                advancement of technology and power.
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="single-feature">
-              <h4><span class="lnr lnr-rocket"></span>Technical Skills</h4>
-              <p>
-                Usage of the Internet is becoming more common due to rapid
-                advancement of technology and power.
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="single-feature">
-              <h4><span class="lnr lnr-diamond"></span>Highly Recomended</h4>
-              <p>
-                Usage of the Internet is becoming more common due to rapid
-                advancement of technology and power.
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="single-feature">
-              <h4><span class="lnr lnr-bubble"></span>Positive Reviews</h4>
-              <p>
-                Usage of the Internet is becoming more common due to rapid
-                advancement of technology and power.
-              </p>
+              <h4>
+                <i style="margin-right: 8px" class="fas fa-user-plus"></i>Anandh
+              </h4>
+              <div class="row">
+                <div class="col">
+                  <small
+                    ><i class="fas fa-car-side" style="margin-right: 8px"></i
+                    >car:</small
+                  >
+                  <h6>asf</h6>
+                </div>
+                <div class="col">
+                  <small>location:</small>
+                  <h6>asf</h6>
+                </div>
+                <div class="col">
+                  <small>name:</small>
+                  <h6>asf</h6>
+                </div>
+                <div class="col">
+                  <small>number:</small>
+                  <h6>asf</h6>
+                </div>
+                <div class="col">
+                  <small>availability:</small>
+                  <h6>asf</h6>
+                </div>
+                <div style="margin-top: 20px" class="col">
+                  <a href="" class="btn btn-primary">Update</a>
+                </div>
+                <div style="margin-top: 20px" class="col">
+                  <a href="" class="btn btn-danger">Delete</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
