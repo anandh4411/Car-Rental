@@ -5,3 +5,6 @@ html,
 body {
   scroll-behavior: smooth !important;
 }
+.footer-text {
+  color: white;
+}

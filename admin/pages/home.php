@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <link rel="shortcut icon" href="../img/fav.png" />
+    <link rel="shortcut icon" href="../../img/fav.png" />
     <meta name="author" content="codepixer" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -24,7 +24,7 @@
     />
     <link
       rel="stylesheet"
-      href="../css/A.linearicons.css+font-awesome.min.css+bootstrap.css+magnific-popup.css+nice-select.css+animate.min.css,Mcc.BUoncfYbd_.css.pagespeed.cf.goumvgdXb-.css"
+      href="../../css/A.linearicons.css+font-awesome.min.css+bootstrap.css+magnific-popup.css+nice-select.css+animate.min.css,Mcc.BUoncfYbd_.css.pagespeed.cf.goumvgdXb-.css"
     />
     <link
       rel="stylesheet"
@@ -32,10 +32,10 @@
     />
     <link
       rel="stylesheet"
-      href="../css/A.owl.carousel.css+main.css,Mcc.-z3jUV0v7B.css.pagespeed.cf.AXcunijNo-.css"
+      href="../../css/A.owl.carousel.css+main.css,Mcc.-z3jUV0v7B.css.pagespeed.cf.AXcunijNo-.css"
     />
-    <link rel="stylesheet" href="../css/bootstrap.min.css" />
-    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
   </head>
 
   <body>
@@ -46,7 +46,7 @@
           <div id="logo">
             <div class="row">
               <h3 style="color: white; margin-right: 10px">ADMIN</h3>
-              <a style="margin-top: 18px" href="index.php">
+              <a style="margin-top: 18px" href="index.html">
                 <script data-pagespeed-no-defer>
                   (function () {
                     for (
@@ -319,83 +319,314 @@
           </div>
           <!-- Logo Code End -->
 
+          <!-- NavBar -->
+          <nav id="nav-menu-container">
+            <ul class="nav-menu">
+              <li class="menu-active"><a href="../index.php">Home</a></li>
+              <?php
+                if(isset($_SESSION["username"])){
+                  echo '<li><a href="">'.$_SESSION["username"].'</a></li>';
+                  echo '<li><a href="../php/logout.php">Logout</a></li>';
+                }
+              ?>
+            </ul>
+          </nav>
+          <!-- NavBar End -->
         </div>
       </div>
     </header>
 
-    <?php
-      if(isset($_SESSION["username"])){
-        header("Location: pages/home.php");
-      }
-      else{
-        echo '<!-- Login Page -->
-                <section class="banner-area relative" id="home">
-                  <div class="overlay overlay-bg"></div>
-                  <div class="container">
-                    <div
-                      class="
-                        row
-                        fullscreen
-                        d-flex
-                        align-items-center
-                        justify-content-center
-                      "
-                    >
-                      <div
-                        style="margin-top: 20px"
-                        class="banner-content col-lg-5 col-md-5 header-right"
-                      >
-                        <h4 class="text-white text-center pb-30">Admin Login</h4>
-                        <form
-                          action="php/login.php"
-                          method="post"
-                          class="form"
-                          role="form"
-                          autocomplete="off"
-                        >
-                          <div class="from-group">
-                            <input
-                              class="form-control txt-field"
-                              type="text"
-                              name="username"
-                              placeholder="Username"
-                            />
-                            <input
-                              class="form-control txt-field"
-                              type="text"
-                              name="password"
-                              placeholder="Password"
-                            />
-                          <div class="form-group row">
-                            <div class="col-md-12">
-                              <button
-                                type="submit"
-                                class="
-                                  btn btn-default btn-lg btn-block
-                                  text-center text-uppercase
-                                "
-                              >
-                                Login
-                              </button>
+    <!-- Home Page -->
+    <section class="banner-area relative" id="home">
+      <div class="overlay overlay-bg"></div>
+      <div class="container">
+        <div
+          class="
+            row
+            fullscreen
+            d-flex
+            align-items-center
+            justify-content-center
+          "
+        >
+          <div
+            style="margin-top: 20px"
+            class="banner-content col-lg-5 col-md-5 header-right"
+          >
+            <h4 class="text-white text-center pb-30">Add a new Car for Rent</h4>
+            <form
+              action="../php/car/add-rent-car.php"
+              method="post"
+              class="form"
+              role="form"
+              autocomplete="off"
+            >
+              <div class="from-group">
+                <input
+                  class="form-control txt-field"
+                  type="text"
+                  name="car_name"
+                  placeholder="Car Name"
+                />
+                <input
+                  class="form-control txt-field"
+                  type="text"
+                  name="car_number"
+                  placeholder="Car Number"
+                />
+                <input
+                  class="form-control txt-field"
+                  type="text"
+                  name="location"
+                  placeholder="Location"
+                />
+                <input
+                  class="form-control txt-field"
+                  type="text"
+                  name="owner_name"
+                  placeholder="Owner Name"
+                />
+                <input
+                  class="form-control txt-field"
+                  type="tel"
+                  name="owner_phone"
+                  placeholder="Owner Phone Number"
+                />
+              </div>
+              <div class="form-group">
+                <div class="default-select" id="default-select">
+                  <select name="availability">
+                    <option value="" disabled selected hidden>
+                      Available or Not
+                    </option>
+                    <option>Available</option>
+                    <option>Not Available</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-md-12">
+                  <button
+                    type="submit"
+                    class="
+                      btn btn-default btn-lg btn-block
+                      text-center text-uppercase
+                    "
+                  >
+                    Confirm Rent Car Adding
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Home Page End -->
+
+    <!-- Cars -->
+    <section class="feature-area section-gap" id="service">
+      <div class="container">
+        <div class="row d-flex justify-content-center">
+          <div class="col-md-8 pb-40 header-text">
+            <h1>All the cars we have</h1>
+            <p>Manage each and every car that we have.</p>
+          </div>
+        </div>
+        <div class="row">
+          <?php
+            include '../php/db.php';
+            $query = "SELECT * FROM car";
+            $result = mysqli_query($connect, $query);
+            while($row = mysqli_fetch_array($result)){
+              echo '<div class="col-lg-4 col-md-6">
+                      <div class="single-feature">
+                        <h4>
+                          <i class="fas fa-car-side" style="margin-right: 10px"></i>'.$row["car_name"].'
+                        </h4>
+                        <div class="row">
+                          <div class="col">
+                            <small>number:</small>
+                            <h6>'.$row["car_number"].'</h6>
+                          </div>
+                          <div class="col">
+                            <small>location:</small>
+                            <h6>'.$row["location"].'</h6>
+                          </div>
+                          <div class="col">
+                            <small>name:</small>
+                            <h6>'.$row["owner_name"].'</h6>
+                          </div>
+                          <div class="col">
+                            <small>phone:</small>
+                            <h6>'.$row["owner_phone"].'</h6>
+                          </div>
+                          <div class="col">
+                            <small>availability:</small>
+                            <h6>'.$row["availability"].'</h6>
+                          </div>
+                          <div style="margin-left: 0px" class="row">
+                            <div style="margin-top: 20px" class="col">
+                              <form action="pages/update-car.php" method="post">
+                                <input name="id" hidden value="'.$row["id"].'" type="text" />
+                                <input value="Update" type="submit" class="btn btn-primary">
+                              </form>
+                            </div>
+                            <div style="margin-top: 20px" class="col">
+                              <form action="php/car/delete-car.php" method="post">
+                                <input name="id" hidden value="'.$row["id"].'" type="text" />
+                                <input value="Delete" type="submit" class="btn btn-danger">
+                              </form>
                             </div>
                           </div>
-                        </form>
+                        </div>
                       </div>
-                    </div>
-                  </div>
-                </section>
-              <!-- Login Page End -->';
-      }
-    ?>
+                    </div>';
+            }
+          ?>
+        </div>
+      </div>
+    </section>
+    <!-- Cars End -->
 
+    <!-- Bookings -->
+    <section class="feature-area section-gap" id="service">
+      <div class="container">
+        <div class="row d-flex justify-content-center">
+          <div class="col-md-8 pb-40 header-text">
+            <h1>
+              All the new Bookings<i
+                style="margin-left: 15px"
+                class="fas fa-calendar-plus"
+              ></i>
+            </h1>
+            <p>Manage all the pending bookings made.</p>
+          </div>
+        </div>
+        <div class="row">
+          <?php
+            include '../php/db.php';
+            $query = "SELECT * FROM booking";
+            $result = mysqli_query($connect, $query);
+            while($row = mysqli_fetch_array($result)){
+              echo '<div class="col-lg-4 col-md-6">
+                      <div class="single-feature">
+                        <h4>
+                          <i style="margin-right: 8px" class="fas fa-user-plus"></i>'.$row["name"].'
+                        </h4>
+                        <div class="row">
+                          <div class="col">
+                            <small
+                              ><i class="fas fa-car-side" style="margin-right: 8px"></i
+                              >car:</small
+                            >
+                            <h6>'.$row["car"].'</h6>
+                          </div>
+                          <div class="col">
+                            <small>pickup:</small>
+                            <h6>'.$row["pickup"].'</h6>
+                          </div>
+                          <div class="col">
+                            <small>dropoff:</small>
+                            <h6>'.$row["dropoff"].'</h6>
+                          </div>
+                          <div class="col">
+                            <small>phone:</small>
+                            <h6>'.$row["phone"].'</h6>
+                          </div>
+                          <div class="row">
+                            <div style="margin-top: 20px" class="col">
+                              <form action="php/car/delete-car.php" method="post">
+                                <input name="id" hidden value="'.$row["id"].'" type="text" />
+                                <input value="Update" type="submit" class="btn btn-primary">
+                              </form>
+                            </div>
+                            <div style="margin-top: 20px" class="col">
+                              <form action="php/booking/delete-booking.php" method="post">
+                                <input name="id" hidden value="'.$row["id"].'" type="text" />
+                                <input value="Delete" type="submit" class="btn btn-danger">
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>';
+            }
+          ?>
+        </div>
+      </div>
+    </section>
+    <!-- Bookings End -->
 
-    <script src="../js/vendor/jquery-2.2.4.min.js"></script>
+    <footer class="footer-area section-gap">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-2 col-md-6 col-sm-6">
+            <div class="single-footer-widget">
+              <h6>Quick links</h6>
+              <ul>
+                <li><a href="index.html#">Jobs</a></li>
+                <li><a href="index.html#">Brand Assets</a></li>
+                <li><a href="index.html#">Investor Relations</a></li>
+                <li><a href="index.html#">Terms of Service</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-6 col-sm-6">
+            <div class="single-footer-widget">
+              <h6>Features</h6>
+              <ul>
+                <li><a href="index.html#">Jobs</a></li>
+                <li><a href="index.html#">Brand Assets</a></li>
+                <li><a href="index.html#">Investor Relations</a></li>
+                <li><a href="index.html#">Terms of Service</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-6 col-sm-6">
+            <div class="single-footer-widget">
+              <h6>Resources</h6>
+              <ul>
+                <li><a href="index.html#">Jobs</a></li>
+                <li><a href="index.html#">Brand Assets</a></li>
+                <li><a href="index.html#">Investor Relations</a></li>
+                <li><a href="index.html#">Terms of Service</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-6 col-sm-6 social-widget">
+            <div class="single-footer-widget">
+              <h6>Follow Us</h6>
+              <p>Let us be social</p>
+              <div class="footer-social d-flex align-items-center">
+                <a href="index.html#"><i class="foot-i fab fa-facebook"></i></a>
+                <a href="index.html#"><i class="foot-i fab fa-twitter"></i></a>
+                <a href="index.html#"><i class="foot-i fab fa-dribbble"></i></a>
+                <a href="index.html#"><i class="foot-i fab fa-behance"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <p class="mt-50 mx-auto footer-text col-lg-12">
+            Copyright &copy;
+            <script>
+              document.write(new Date().getFullYear());
+            </script>
+            All rights reserved | This website is made with
+            <i class="far fa-heart" aria-hidden="true"></i> by
+            <a href="https://anandh.xyz" target="_blank">Anandh</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../../js/vendor/jquery-2.2.4.min.js"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
       integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
       crossorigin="anonymous"
     ></script>
-    <script src="../js/vendor,_bootstrap.min.js+easing.min.js+hoverIntent.js+superfish.min.js+jquery.ajaxchimp.min.js+jquery.magnific-popup.min.js.pagespeed.jc.L2UtF7_cBk.js"></script>
+    <script src="../../js/vendor,_bootstrap.min.js+easing.min.js+hoverIntent.js+superfish.min.js+jquery.ajaxchimp.min.js+jquery.magnific-popup.min.js.pagespeed.jc.L2UtF7_cBk.js"></script>
     <script>
       eval(mod_pagespeed_ZBzz9mVSfI);
     </script>
@@ -416,7 +647,7 @@
     <script>
       eval(mod_pagespeed_KgeCRGEKTi);
     </script>
-    <script src="../js/owl.carousel.min.js+jquery.sticky.js+jquery.nice-select.min.js+waypoints.min.js+jquery.counterup.min.js+parallax.min.js+mail-script.js+main.js.pagespeed.jc.18biQAr73_.js"></script>
+    <script src="../../js/owl.carousel.min.js+jquery.sticky.js+jquery.nice-select.min.js+waypoints.min.js+jquery.counterup.min.js+parallax.min.js+mail-script.js+main.js.pagespeed.jc.18biQAr73_.js"></script>
     <script>
       eval(mod_pagespeed_eRSrk2E6G_);
     </script>
