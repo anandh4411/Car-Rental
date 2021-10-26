@@ -12,6 +12,6 @@ $availability = $_POST["availability"];
 $query = "INSERT INTO car (car_name, car_number, location, owner_name, owner_phone, availability) 
 VALUES ('$car_name', '$car_number', '$location', '$owner_name', '$owner_phone', '$availability')";
 mysqli_query($connect, $query);
-header("Location: ../../index.php");
+header("Location: ../../pages/home.php");
 
 ?>

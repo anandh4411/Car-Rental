@@ -14,6 +14,6 @@ $query = "UPDATE car
 SET car_name = '$car_name', car_number = '$car_number', location = '$location', owner_name = '$owner_name', owner_phone = '$owner_phone', availability = '$availability'
 WHERE id = '$id'";
 mysqli_query($connect, $query);
-header("Location: ../../index.php");
+header("Location: ../../pages/home.php");
 
 ?>

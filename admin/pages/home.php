@@ -467,13 +467,13 @@
                           </div>
                           <div style="margin-left: 0px" class="row">
                             <div style="margin-top: 20px" class="col">
-                              <form action="pages/update-car.php" method="post">
+                              <form action="update-car.php" method="post">
                                 <input name="id" hidden value="'.$row["id"].'" type="text" />
                                 <input value="Update" type="submit" class="btn btn-primary">
                               </form>
                             </div>
                             <div style="margin-top: 20px" class="col">
-                              <form action="php/car/delete-car.php" method="post">
+                              <form action="../php/car/delete-car.php" method="post">
                                 <input name="id" hidden value="'.$row["id"].'" type="text" />
                                 <input value="Delete" type="submit" class="btn btn-danger">
                               </form>
@@ -536,13 +536,13 @@
                           </div>
                           <div class="row">
                             <div style="margin-top: 20px" class="col">
-                              <form action="php/car/delete-car.php" method="post">
+                              <form action="../php/booking/update-booking.php" method="post">
                                 <input name="id" hidden value="'.$row["id"].'" type="text" />
                                 <input value="Update" type="submit" class="btn btn-primary">
                               </form>
                             </div>
                             <div style="margin-top: 20px" class="col">
-                              <form action="php/booking/delete-booking.php" method="post">
+                              <form action="../php/booking/delete-booking.php" method="post">
                                 <input name="id" hidden value="'.$row["id"].'" type="text" />
                                 <input value="Delete" type="submit" class="btn btn-danger">
                               </form>

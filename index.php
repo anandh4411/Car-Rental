@@ -316,8 +316,8 @@
           <!-- NavBar -->
           <nav id="nav-menu-container">
             <ul class="nav-menu">
-              <li class="menu-active"><a href="index.html">Home</a></li>
-              <li><a href="pages/cars.html">Login</a></li>
+              <li class="menu-active"><a href="index.php">Home</a></li>
+              <!-- <li><a href="pages/cars.html">Login</a></li> -->
             </ul>
           </nav>
           <!-- NavBar End -->
